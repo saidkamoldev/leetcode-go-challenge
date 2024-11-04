@@ -5,25 +5,26 @@ import (
 )
 
 func plusOne(digits []int) []int {
+	size := len(digits)
 
-	for i := len(digits) - 1; i < 0; i-- {
-		digits[i]++
-
-		if digits[i] < 10 {
+	for i := size - 1; i >= 0; i-- {
+		if digits[i] < 9 {
+			digits[i] += 1
 			return digits
 		}
+
 		digits[i] = 0
 	}
 
-	return append([]int{1}, digits...)
+	newDigits := make([]int, size+1)
+	newDigits[0] = 1
+
+	return newDigits
 }
 
 func main() {
+	nums := []int{1, 2, 3, 4}
+	newLength := plusOne(nums)
 
-	nums := []int{1, 2, 3, 4, 5} // Original slice
-	// // val := 2                           // O'chirilishi kerak bo'lgan qiymat
-
-	newLength := plusOne(nums) // removeElement funksiyasini chaqirish
-
-	fmt.Println(newLength)
+	fmt.Println(newLength) // Output: [4, 3, 2, 2]
 }
