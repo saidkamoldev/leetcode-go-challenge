@@ -3,23 +3,6 @@ package main
 import "fmt"
 
 func majorityElement(nums []int) int {
-	// count := 0
-	// index := 0
-
-	// for i := 0; i < len(nums); i++ {
-	// 	temp := 0
-	// 	for j := 0; j < len(nums); j++ {
-	// 		if nums[i] == nums[j] {
-	// 			temp++
-	// 		}
-	// 	}
-	// 	if temp > count {
-	// 		count = temp
-	// 		index = i
-	// 	}
-	// }
-
-	// return nums[index]
 
 	candidate, count := 0, 0
 
@@ -44,3 +27,21 @@ func main() {
 	fmt.Println(newLength)
 
 }
+
+// count := 0
+// index := 0
+
+// for i := 0; i < len(nums); i++ {
+// 	temp := 0
+// 	for j := 0; j < len(nums); j++ {
+// 		if nums[i] == nums[j] {
+// 			temp++
+// 		}
+// 	}
+// 	if temp > count {
+// 		count = temp
+// 		index = i
+// 	}
+// }
+
+// return nums[index]
