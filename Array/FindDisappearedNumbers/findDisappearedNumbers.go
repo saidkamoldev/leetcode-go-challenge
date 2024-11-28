@@ -16,6 +16,7 @@ func findDisappearedNumbers(nums []int) []int {
     for i := 1; i <= len(nums); i++ {
         if !m[i] {
             res = append(res, i)
+			fmt.Println(i)
 		
         }
     }

@@ -22,6 +22,7 @@ func containsDuplicate(nums []int) bool  {
 	// } else {
 	// 	return false
 	// }
+	
 	seen := make(map[int]bool) // Xesh jadvali
     for _, num := range nums {
         if seen[num] { 
