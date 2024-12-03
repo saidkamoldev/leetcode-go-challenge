@@ -4,32 +4,63 @@ import "fmt"
 
 func countStudents(students []int, sandwiches []int) int {
 
-	count :=0
-	index :=0
-	index2 :=0
-	for index < len(students){
-
-		if students[index2] == 1 && sandwiches[index] == 1  {
-			count++
+		// i,j := 0, 0
+		// last := len(students)-1
+		// count:=0
 		
-		} else if  sandwiches[index] == 0{
-			index2++
+
+		// for i <len(students) && j < len(sandwiches) {
+		// 	if students[i] == sandwiches[j] {
+		// 		i++
+		// 		j++
+		// 		count++
+		// 		continue
+				
+		// 	}
+
+			
+
+		// 	if students[i] != sandwiches[j] {
+		// 		temp := students[i]
+		// 		students[i] = students[last]
+		// 		students[last] = temp
+		// 	}
+		// 	fmt.Println(students)
+		// 	if students[i] == students[last] {
+		// 		break
+		// 	}
+		// }
+		// // count = len(students) - count
+
+		// return count 
+		i, j := 0, 0 
+		rejected := 0 
 	
+		for i < len(students) {
+			if students[i] == sandwiches[j] {
+				
+				students = append(students[:i], students[i+1:]...)
+				j++ 
+				rejected = 0 
+			} else {
+				// Talaba oxiriga o'tadi
+				students = append(students[1:], students[0])
+				rejected++
+			}
+			fmt.Println(students)
+			
+			if rejected == len(students) {
+				break
+			}
 		}
 	
-	
-		if index2 == len(students) {
-			break
-		}
-		index++
-	}
-return count  
+		return len(students) 
 
 }
 
 func main()  {
-	students  := []int{1,1,1,0,0,1}
-	sandwiches := []int{1,0,0,0,1,1}
+	students  := []int{1,1,0,0}
+	sandwiches := []int{0,1,0,1}
 
 	result := countStudents(students, sandwiches)
 	fmt.Println(result)
